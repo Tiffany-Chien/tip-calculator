@@ -15,6 +15,7 @@
 		988B0E8326BCE07600DD2303 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 988B0E8126BCE07600DD2303 /* LaunchScreen.storyboard */; };
 		988B0E8E26BCE07600DD2303 /* PreWorkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988B0E8D26BCE07600DD2303 /* PreWorkTests.swift */; };
 		988B0E9926BCE07700DD2303 /* PreWorkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988B0E9826BCE07700DD2303 /* PreWorkUITests.swift */; };
+		988B0EB026BD9A0000DD2303 /* Tippy.png in Resources */ = {isa = PBXBuildFile; fileRef = 988B0EAF26BD9A0000DD2303 /* Tippy.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,8 @@
 		988B0E9426BCE07600DD2303 /* PreWorkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PreWorkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		988B0E9826BCE07700DD2303 /* PreWorkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreWorkUITests.swift; sourceTree = "<group>"; };
 		988B0E9A26BCE07700DD2303 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		988B0EAD26BD32A100DD2303 /* Tippy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tippy.png; sourceTree = "<group>"; };
+		988B0EAF26BD9A0000DD2303 /* Tippy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tippy.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +82,8 @@
 		988B0E6A26BCE07400DD2303 = {
 			isa = PBXGroup;
 			children = (
+				988B0EAD26BD32A100DD2303 /* Tippy.png */,
+				988B0EA626BD2EA700DD2303 /* logo */,
 				988B0E7526BCE07400DD2303 /* PreWork */,
 				988B0E8C26BCE07600DD2303 /* PreWorkTests */,
 				988B0E9726BCE07700DD2303 /* PreWorkUITests */,
@@ -124,8 +129,16 @@
 			children = (
 				988B0E9826BCE07700DD2303 /* PreWorkUITests.swift */,
 				988B0E9A26BCE07700DD2303 /* Info.plist */,
+				988B0EAF26BD9A0000DD2303 /* Tippy.png */,
 			);
 			path = PreWorkUITests;
+			sourceTree = "<group>";
+		};
+		988B0EA626BD2EA700DD2303 /* logo */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = logo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,6 +261,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				988B0EB026BD9A0000DD2303 /* Tippy.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

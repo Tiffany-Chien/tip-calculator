@@ -38,7 +38,7 @@ class ViewController: UIViewController {
         let total = bill + tip
         // calculate tip each person
         let partySize = Double(valueLabel.text!) ?? 1
-        let totalDivdePartySize = Double(total / partySize)
+        let totalDivdePartySize = (Double(bill / partySize)) * (1 + tipPercentage[tipControl.selectedSegmentIndex])
         tipEachPerson.text = String(format: "$%.2f", totalDivdePartySize)
         
         // Update the tip and total label
