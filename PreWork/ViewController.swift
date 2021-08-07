@@ -30,6 +30,9 @@ class ViewController: UIViewController {
         stepper.maximumValue = 12
         calculateTipFunction();
         
+        // Set first responder
+        billAmountTextField.becomeFirstResponder()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,6 +48,9 @@ class ViewController: UIViewController {
     func calculateTipFunction() {
         // get the bill amount from the text field
         let bill = Double(billAmountTextField.text!) ?? 0
+        if (bill == 0) {
+            billAmountTextField.becomeFirstResponder()
+        }
         // calculate the cost
         // tip percentage
         
@@ -69,6 +75,9 @@ class ViewController: UIViewController {
     @IBAction func calculateTip(_ sender: Any) {
         calculateTipFunction();
     }
+    
+
+
 
 }
 
