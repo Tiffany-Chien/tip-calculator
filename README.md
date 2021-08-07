@@ -22,7 +22,7 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-* [x] App logo icon change
+* [x] Changed App logo icon, add different background colors and text field styles
 * [x] User could select the number of party to split the bill, and it will show how much user party should pay per person
 * [x] User could set a customize their own tipping percentange in Settings
 
@@ -37,7 +37,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+Encounter difficulties when I want to save the settings of the customized tax percentage.
 
 ## License
 
