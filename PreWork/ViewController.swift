@@ -18,7 +18,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var tipEachPerson: UILabel!
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
         valueLabel.text = Int(sender.value).description
+        calculateTipFunction()
     }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,14 +28,31 @@ class ViewController: UIViewController {
         stepper.wraps = true
         stepper.autorepeat = true
         stepper.maximumValue = 12
+        calculateTipFunction();
+        
     }
-
-    @IBAction func calculateTip(_ sender: Any) {
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let tip1Title = String(UserDefaults.standard.object(forKey: "tip1") as! Int) + "%";
+        let tip2Title = String(UserDefaults.standard.object(forKey: "tip2") as! Int) + "%";
+        let tip3Title = String(UserDefaults.standard.object(forKey: "tip3") as! Int) + "%";
+        tipControl.setTitle(tip1Title, forSegmentAt: 0);
+        tipControl.setTitle(tip2Title, forSegmentAt: 1)
+        tipControl.setTitle(tip3Title, forSegmentAt: 2)
+        calculateTipFunction();
+    }
+    
+    func calculateTipFunction() {
         // get the bill amount from the text field
         let bill = Double(billAmountTextField.text!) ?? 0
         // calculate the cost
         // tip percentage
-        let tipPercentage = [0.15, 0.18, 0.20]
+        
+        let tip1 = UserDefaults.standard.object(forKey: "tip1") as! Double
+        let tip2 = UserDefaults.standard.object(forKey: "tip2") as! Double
+        let tip3 = UserDefaults.standard.object(forKey: "tip3") as! Double
+        let tipPercentage = [tip1 * 0.01, tip2 * 0.01, tip3 * 0.01]
+        
         let tip = bill * tipPercentage[tipControl.selectedSegmentIndex]
         let total = bill + tip
         // calculate tip each person
@@ -45,8 +64,11 @@ class ViewController: UIViewController {
         tipAmountLabel.text = String(format: "$%.2f", tip)
         // Update the total amount
         totalLabel.text = String(format: "$%.2f", total)
-    
     }
-    
+
+    @IBAction func calculateTip(_ sender: Any) {
+        calculateTipFunction();
+    }
+
 }
 
