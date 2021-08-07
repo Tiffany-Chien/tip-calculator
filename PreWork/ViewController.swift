@@ -33,6 +33,7 @@ class ViewController: UIViewController {
         // Set first responder
         billAmountTextField.becomeFirstResponder()
         
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -64,12 +65,23 @@ class ViewController: UIViewController {
         // calculate tip each person
         let partySize = Double(valueLabel.text!) ?? 1
         let totalDivdePartySize = (Double(bill / partySize)) * (1 + tipPercentage[tipControl.selectedSegmentIndex])
-        tipEachPerson.text = String(format: "$%.2f", totalDivdePartySize)
-        
-        // Update the tip and total label
-        tipAmountLabel.text = String(format: "$%.2f", tip)
-        // Update the total amount
-        totalLabel.text = String(format: "$%.2f", total)
+        //tipEachPerson.text = String(format: "$%.2f", totalDivdePartySize)
+               
+        // Update the labels and format locale-specific currency and currency thousands separators
+        let formatter = NumberFormatter()
+        formatter.locale = Locale.current
+        formatter.numberStyle = .currency
+        if let formattedTipAmount = formatter.string(from: tip as NSNumber) {
+            tipAmountLabel.text = "\(formattedTipAmount)"
+        }
+        if let totalTipAmount = formatter.string(from: total as NSNumber) {
+            totalLabel.text = "\(totalTipAmount)"
+        }
+
+        if let totalPerPerson = formatter.string(from: totalDivdePartySize as NSNumber) {
+            tipEachPerson.text = "\(totalPerPerson)"
+        }
+
     }
 
     @IBAction func calculateTip(_ sender: Any) {
@@ -77,7 +89,7 @@ class ViewController: UIViewController {
     }
     
 
-
-
 }
+
+
 
